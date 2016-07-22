@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   ButtonData.plist
-   LVDaDa
-
-   Created by Sept on 16/7/19.
-   Copyright (c) 2016年 丶九月. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>home</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>我的订单</string>
+			<key>image</key>
+			<string>index-wo-de-ding-dan</string>
+			<key>seleImage</key>
+			<string>index-wo-de-ding-dan(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>我的主页</string>
+			<key>image</key>
+			<string>index-lv-shi-kong-jian</string>
+			<key>seleImage</key>
+			<string>index-lv-shi-kong-jian(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>文案分享</string>
+			<key>image</key>
+			<string>index-wen-an-fen-xiang</string>
+			<key>seleImage</key>
+			<string>index-wen-an-fen-xiang(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>产品发布</string>
+			<key>image</key>
+			<string>index-chan-pin-fa-bu</string>
+			<key>seleImage</key>
+			<string>index-chan-pin-fa-bu(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>律师圈</string>
+			<key>image</key>
+			<string>index-lv-shi-quan</string>
+			<key>seleImage</key>
+			<string>index-lv-shi-quan(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>活动管理</string>
+			<key>image</key>
+			<string>index-huo-dong-guan-li</string>
+			<key>seleImage</key>
+			<string>index-huo-dong-guan-li(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>客户关系</string>
+			<key>image</key>
+			<string>index-ke-hu-guan-xi</string>
+			<key>seleImage</key>
+			<string>index-ke-hu-guan-xi(dian-ji)</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>同行合作</string>
+			<key>image</key>
+			<string>index-tong-hang-he-zuo</string>
+			<key>seleImage</key>
+			<string>index-tong-hang-he-zuo(dian-ji)</string>
+		</dict>
+	</array>
+</dict>
 </plist>

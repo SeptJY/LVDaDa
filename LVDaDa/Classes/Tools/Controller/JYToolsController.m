@@ -7,49 +7,103 @@
 //
 
 #import "JYToolsController.h"
+#import "JYToolsData.h"
+#import "JYHomeToolCell.h"
 
-@interface JYToolsController ()
+static NSString *ID = @"home";
+//static NSInteger cellCount = 3;
+static NSString *url = @"http://apit.lvdd.cn/tool/getAllTool?imei=25A9BBD9-65A3-4A54-818C-5BE5008E77BD/versionCode=8";
+
+@interface JYToolsController () <JYHomeToolCellDelegate>
+
+@property (strong, nonatomic) NSArray *buttonArray;
 
 @end
 
 @implementation JYToolsController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 1.设置导航栏的头部视图和左边按钮
+    [self setupTableViewInfo];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 2.初始化tableView的信息
+    [self setupTableViewInfo];
+    
+    // 3.请求数据
+    [self requestHttpDataaa];
 }
 
-- (void)didReceiveMemoryWarning {
+#pragma mark ---> 设置导航栏的头部视图和左边按钮
+- (void)setupNavigationInfo
+{
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lvdd"]];
+    
+    // 设置导航栏左边的按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"index-xiao-xi" highImage:@"index-xiao-xi(dian-ji)" target:self action:@selector(messageOnClick)];
+}
+
+#pragma mark ---> 初始化tableView的信息
+- (void)setupTableViewInfo
+{
+    // tableView上面多出来20个像素，是因为自动布局的缘故
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView.bounces = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerClass:[JYHomeToolCell class] forCellReuseIdentifier:ID];
+    self.tableView.rowHeight = (self.tableView.height - 44 - 49) / 3;
+}
+
+- (void)messageOnClick
+{
+    
+}
+
+- (void)requestHttpDataaa
+{
+    [[AFHTTPSessionManager manager] POST:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.buttonArray = [JYToolsData mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"网络错误"];
+    }];
+}
+
+#pragma mark ---> JYHomeToolCellDelegate 律师计算器、企业信用、法律查询等等
+- (void)homeTooleCellBtnOnClick:(UIButton *)btn
+{
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.buttonArray.count * 0.5;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    JYHomeToolCell *cell = [JYHomeToolCell cellWithTableView:tableView cellType:JYHomeToolTypeTool];
+    cell.delegate = self;
+    int index = (int)indexPath.row * 2;
+    cell.leftTool = self.buttonArray[index];
+    cell.rightTool = self.buttonArray[index + 1];
+    cell.leftTag = 20 + index;
+    cell.rightTag = 21 + index;
+    cell.btnTitleColor = [UIColor blackColor];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
