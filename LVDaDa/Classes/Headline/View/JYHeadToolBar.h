@@ -1,5 +1,5 @@
 //
-//  JYHeadLineController.h
+//  JYHeadToolBar.h
 //  LVDaDa
 //
 //  Created by Sept on 16/7/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYHeadLineController : UITableViewController
+@interface JYHeadToolBar : UIView
 
 @end

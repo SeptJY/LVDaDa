@@ -27,7 +27,7 @@ static NSString *url = @"http://apit.lvdd.cn/tool/getAllTool?imei=25A9BBD9-65A3-
     [super viewDidLoad];
     
     // 1.设置导航栏的头部视图和左边按钮
-    [self setupTableViewInfo];
+    [self setupNavigationInfo];
     
     // 2.初始化tableView的信息
     [self setupTableViewInfo];

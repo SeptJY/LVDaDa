@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B19CDAA1D41F58600DECDF7 /* JYHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDA91D41F58600DECDF7 /* JYHeadLineController.m */; };
+		5B19CDAD1D42007000DECDF7 /* JYHeadLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDAC1D42007000DECDF7 /* JYHeadLines.m */; };
+		5B19CDB01D42020500DECDF7 /* JYHeadLinesImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDAF1D42020500DECDF7 /* JYHeadLinesImage.m */; };
+		5B19CDB41D4203EC00DECDF7 /* JYHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */; };
+		5B19CDB81D42060B00DECDF7 /* JYHeadLineFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDB71D42060B00DECDF7 /* JYHeadLineFrame.m */; };
+		5B19CDBE1D422AC200DECDF7 /* JYHeadToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */; };
+		5B19CDC01D422ADB00DECDF7 /* JYHeadToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */; };
 		5B806D081D3C812E00C0EAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D071D3C812E00C0EAA5 /* main.m */; };
 		5B806D0B1D3C812E00C0EAA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D0A1D3C812E00C0EAA5 /* AppDelegate.m */; };
 		5B806D131D3C812E00C0EAA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B806D121D3C812E00C0EAA5 /* Assets.xcassets */; };
 		5B806D161D3C812E00C0EAA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B806D141D3C812E00C0EAA5 /* LaunchScreen.storyboard */; };
 		5B806D211D3C812F00C0EAA5 /* LVDaDaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D201D3C812F00C0EAA5 /* LVDaDaTests.m */; };
 		5B806D2C1D3C812F00C0EAA5 /* LVDaDaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D2B1D3C812F00C0EAA5 /* LVDaDaUITests.m */; };
-		5B806D5B1D3C816800C0EAA5 /* JYHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D3D1D3C816800C0EAA5 /* JYHeadLineController.m */; };
 		5B806D5E1D3C816800C0EAA5 /* JYMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D4A1D3C816800C0EAA5 /* JYMineController.m */; };
 		5B806D601D3C816800C0EAA5 /* JYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D561D3C816800C0EAA5 /* JYTabBarController.m */; };
 		5B806D661D3C886F00C0EAA5 /* JYHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D651D3C886F00C0EAA5 /* JYHomeController.m */; };
@@ -52,6 +58,19 @@
 
 /* Begin PBXFileReference section */
 		4D910E64E6370052F17361A1 /* libPods-LVDaDa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LVDaDa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B19CDA81D41F58600DECDF7 /* JYHeadLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineController.h; sourceTree = "<group>"; };
+		5B19CDA91D41F58600DECDF7 /* JYHeadLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineController.m; sourceTree = "<group>"; };
+		5B19CDAB1D42007000DECDF7 /* JYHeadLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLines.h; sourceTree = "<group>"; };
+		5B19CDAC1D42007000DECDF7 /* JYHeadLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLines.m; sourceTree = "<group>"; };
+		5B19CDAE1D42020500DECDF7 /* JYHeadLinesImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLinesImage.h; sourceTree = "<group>"; };
+		5B19CDAF1D42020500DECDF7 /* JYHeadLinesImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLinesImage.m; sourceTree = "<group>"; };
+		5B19CDB11D4203EC00DECDF7 /* JYHeadLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineCell.h; sourceTree = "<group>"; };
+		5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineCell.m; sourceTree = "<group>"; };
+		5B19CDB61D42060B00DECDF7 /* JYHeadLineFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineFrame.h; sourceTree = "<group>"; };
+		5B19CDB71D42060B00DECDF7 /* JYHeadLineFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineFrame.m; sourceTree = "<group>"; };
+		5B19CDBC1D422AC200DECDF7 /* JYHeadToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadToolBar.h; sourceTree = "<group>"; };
+		5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadToolBar.m; sourceTree = "<group>"; };
+		5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYHeadToolBar.xib; sourceTree = "<group>"; };
 		5B806D031D3C812E00C0EAA5 /* LVDaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LVDaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B806D071D3C812E00C0EAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B806D091D3C812E00C0EAA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,8 +84,6 @@
 		5B806D271D3C812F00C0EAA5 /* LVDaDaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LVDaDaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B806D2B1D3C812F00C0EAA5 /* LVDaDaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVDaDaUITests.m; sourceTree = "<group>"; };
 		5B806D2D1D3C812F00C0EAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B806D3C1D3C816800C0EAA5 /* JYHeadLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineController.h; sourceTree = "<group>"; };
-		5B806D3D1D3C816800C0EAA5 /* JYHeadLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineController.m; sourceTree = "<group>"; };
 		5B806D491D3C816800C0EAA5 /* JYMineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYMineController.h; sourceTree = "<group>"; };
 		5B806D4A1D3C816800C0EAA5 /* JYMineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYMineController.m; sourceTree = "<group>"; };
 		5B806D551D3C816800C0EAA5 /* JYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTabBarController.h; sourceTree = "<group>"; };
@@ -221,8 +238,8 @@
 		5B806D3B1D3C816800C0EAA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B806D3C1D3C816800C0EAA5 /* JYHeadLineController.h */,
-				5B806D3D1D3C816800C0EAA5 /* JYHeadLineController.m */,
+				5B19CDA81D41F58600DECDF7 /* JYHeadLineController.h */,
+				5B19CDA91D41F58600DECDF7 /* JYHeadLineController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +247,12 @@
 		5B806D3E1D3C816800C0EAA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B19CDAB1D42007000DECDF7 /* JYHeadLines.h */,
+				5B19CDAC1D42007000DECDF7 /* JYHeadLines.m */,
+				5B19CDAE1D42020500DECDF7 /* JYHeadLinesImage.h */,
+				5B19CDAF1D42020500DECDF7 /* JYHeadLinesImage.m */,
+				5B19CDB61D42060B00DECDF7 /* JYHeadLineFrame.h */,
+				5B19CDB71D42060B00DECDF7 /* JYHeadLineFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +260,11 @@
 		5B806D3F1D3C816800C0EAA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B19CDB11D4203EC00DECDF7 /* JYHeadLineCell.h */,
+				5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */,
+				5B19CDBC1D422AC200DECDF7 /* JYHeadToolBar.h */,
+				5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */,
+				5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -553,6 +581,7 @@
 			files = (
 				5B84D59B1D3DD3270090FC35 /* ButtonData.plist in Resources */,
 				5B806D161D3C812E00C0EAA5 /* LaunchScreen.storyboard in Resources */,
+				5B19CDC01D422ADB00DECDF7 /* JYHeadToolBar.xib in Resources */,
 				5B806D131D3C812E00C0EAA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B19CDB01D42020500DECDF7 /* JYHeadLinesImage.m in Sources */,
 				5B93C1DA1D3F241100778B38 /* JYToolsData.m in Sources */,
 				5B806D751D3CB5D000C0EAA5 /* JYNSString+Extension.m in Sources */,
 				5B84D5AE1D3E14EE0090FC35 /* JYToolsController.m in Sources */,
@@ -634,15 +664,19 @@
 				5B806D0B1D3C812E00C0EAA5 /* AppDelegate.m in Sources */,
 				5B93C1DD1D3F4FEF00778B38 /* JYHomeToolCell.m in Sources */,
 				5B84D5A81D3E135C0090FC35 /* UIBarButtonItem+JYExtension.m in Sources */,
+				5B19CDAD1D42007000DECDF7 /* JYHeadLines.m in Sources */,
 				5B84D5A11D3DFBC80090FC35 /* JYVerticalButton.m in Sources */,
+				5B19CDBE1D422AC200DECDF7 /* JYHeadToolBar.m in Sources */,
 				5B806D761D3CB5D000C0EAA5 /* UIImage+CKExtension.m in Sources */,
 				5B806D771D3CB5D000C0EAA5 /* UIView+Extension.m in Sources */,
 				5B806D691D3C889F00C0EAA5 /* JYHomeHeadView.m in Sources */,
 				5B84D5A41D3E0F0C0090FC35 /* JYNavigationController.m in Sources */,
 				5B806D6E1D3C896F00C0EAA5 /* JYRollingView.m in Sources */,
+				5B19CDB41D4203EC00DECDF7 /* JYHeadLineCell.m in Sources */,
 				5B806D5E1D3C816800C0EAA5 /* JYMineController.m in Sources */,
+				5B19CDB81D42060B00DECDF7 /* JYHeadLineFrame.m in Sources */,
 				5B84D59E1D3DD9160090FC35 /* JYBtnData.m in Sources */,
-				5B806D5B1D3C816800C0EAA5 /* JYHeadLineController.m in Sources */,
+				5B19CDAA1D41F58600DECDF7 /* JYHeadLineController.m in Sources */,
 				5B806D081D3C812E00C0EAA5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
