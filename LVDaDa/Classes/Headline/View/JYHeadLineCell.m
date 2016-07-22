@@ -10,6 +10,7 @@
 #import "JYHeadLineFrame.h"
 #import "JYHeadLines.h"
 #import "JYHeadLinesImage.h"
+#import "JYHeadToolBar.h"
 
 @interface JYHeadLineCell ()
 
@@ -24,6 +25,8 @@
 @property (strong, nonatomic) UIImageView *twoImage;
 
 @property (strong, nonatomic) UIImageView *threeImage;
+
+@property (strong, nonatomic) JYHeadToolBar *headTool;
 
 @end
 
@@ -117,6 +120,17 @@
     return _threeImage;
 }
 
+- (JYHeadToolBar *)headTool
+{
+    if (!_headTool) {
+        
+        _headTool = [[JYHeadToolBar alloc] init];
+        
+        [self.contentView addSubview:_headTool];
+    }
+    return _headTool;
+}
+
 - (void)setHeadFrame:(JYHeadLineFrame *)headFrame
 {
     _headFrame = headFrame;
@@ -176,6 +190,8 @@
         default:
             break;
     }
+    
+    self.headTool.frame = headFrame.toolbarFrame;
 }
 
 @end
