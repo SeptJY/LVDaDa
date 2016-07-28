@@ -10,10 +10,7 @@
 		5B19CDAA1D41F58600DECDF7 /* JYHeadLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDA91D41F58600DECDF7 /* JYHeadLineController.m */; };
 		5B19CDAD1D42007000DECDF7 /* JYHeadLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDAC1D42007000DECDF7 /* JYHeadLines.m */; };
 		5B19CDB01D42020500DECDF7 /* JYHeadLinesImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDAF1D42020500DECDF7 /* JYHeadLinesImage.m */; };
-		5B19CDB41D4203EC00DECDF7 /* JYHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */; };
 		5B19CDB81D42060B00DECDF7 /* JYHeadLineFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDB71D42060B00DECDF7 /* JYHeadLineFrame.m */; };
-		5B19CDBE1D422AC200DECDF7 /* JYHeadToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */; };
-		5B19CDC01D422ADB00DECDF7 /* JYHeadToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */; };
 		5B806D081D3C812E00C0EAA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D071D3C812E00C0EAA5 /* main.m */; };
 		5B806D0B1D3C812E00C0EAA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B806D0A1D3C812E00C0EAA5 /* AppDelegate.m */; };
 		5B806D131D3C812E00C0EAA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B806D121D3C812E00C0EAA5 /* Assets.xcassets */; };
@@ -34,6 +31,8 @@
 		5B84D5A41D3E0F0C0090FC35 /* JYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D5A31D3E0F0C0090FC35 /* JYNavigationController.m */; };
 		5B84D5A81D3E135C0090FC35 /* UIBarButtonItem+JYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D5A71D3E135C0090FC35 /* UIBarButtonItem+JYExtension.m */; };
 		5B84D5AE1D3E14EE0090FC35 /* JYToolsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D5AD1D3E14EE0090FC35 /* JYToolsController.m */; };
+		5B852D0E1D430568006682C0 /* JYHeadLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B852D0C1D430568006682C0 /* JYHeadLineCell.m */; };
+		5B852D0F1D430568006682C0 /* JYHeadLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B852D0D1D430568006682C0 /* JYHeadLineCell.xib */; };
 		5B93C1DA1D3F241100778B38 /* JYToolsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B93C1D91D3F241100778B38 /* JYToolsData.m */; };
 		5B93C1DD1D3F4FEF00778B38 /* JYHomeToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B93C1DC1D3F4FEF00778B38 /* JYHomeToolCell.m */; };
 		FFEE41467E9A67C43DC721F0 /* libPods-LVDaDa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D910E64E6370052F17361A1 /* libPods-LVDaDa.a */; };
@@ -64,13 +63,8 @@
 		5B19CDAC1D42007000DECDF7 /* JYHeadLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLines.m; sourceTree = "<group>"; };
 		5B19CDAE1D42020500DECDF7 /* JYHeadLinesImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLinesImage.h; sourceTree = "<group>"; };
 		5B19CDAF1D42020500DECDF7 /* JYHeadLinesImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLinesImage.m; sourceTree = "<group>"; };
-		5B19CDB11D4203EC00DECDF7 /* JYHeadLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineCell.h; sourceTree = "<group>"; };
-		5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineCell.m; sourceTree = "<group>"; };
 		5B19CDB61D42060B00DECDF7 /* JYHeadLineFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineFrame.h; sourceTree = "<group>"; };
 		5B19CDB71D42060B00DECDF7 /* JYHeadLineFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineFrame.m; sourceTree = "<group>"; };
-		5B19CDBC1D422AC200DECDF7 /* JYHeadToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadToolBar.h; sourceTree = "<group>"; };
-		5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadToolBar.m; sourceTree = "<group>"; };
-		5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYHeadToolBar.xib; sourceTree = "<group>"; };
 		5B806D031D3C812E00C0EAA5 /* LVDaDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LVDaDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B806D071D3C812E00C0EAA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B806D091D3C812E00C0EAA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +108,9 @@
 		5B84D5A71D3E135C0090FC35 /* UIBarButtonItem+JYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JYExtension.m"; sourceTree = "<group>"; };
 		5B84D5AC1D3E14EE0090FC35 /* JYToolsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYToolsController.h; sourceTree = "<group>"; };
 		5B84D5AD1D3E14EE0090FC35 /* JYToolsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYToolsController.m; sourceTree = "<group>"; };
+		5B852D0B1D430568006682C0 /* JYHeadLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHeadLineCell.h; sourceTree = "<group>"; };
+		5B852D0C1D430568006682C0 /* JYHeadLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYHeadLineCell.m; sourceTree = "<group>"; };
+		5B852D0D1D430568006682C0 /* JYHeadLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYHeadLineCell.xib; sourceTree = "<group>"; };
 		5B93C1D81D3F241100778B38 /* JYToolsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYToolsData.h; sourceTree = "<group>"; };
 		5B93C1D91D3F241100778B38 /* JYToolsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYToolsData.m; sourceTree = "<group>"; };
 		5B93C1DB1D3F4FEF00778B38 /* JYHomeToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYHomeToolCell.h; sourceTree = "<group>"; };
@@ -260,11 +257,9 @@
 		5B806D3F1D3C816800C0EAA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B19CDB11D4203EC00DECDF7 /* JYHeadLineCell.h */,
-				5B19CDB21D4203EC00DECDF7 /* JYHeadLineCell.m */,
-				5B19CDBC1D422AC200DECDF7 /* JYHeadToolBar.h */,
-				5B19CDBD1D422AC200DECDF7 /* JYHeadToolBar.m */,
-				5B19CDBF1D422ADB00DECDF7 /* JYHeadToolBar.xib */,
+				5B852D0B1D430568006682C0 /* JYHeadLineCell.h */,
+				5B852D0C1D430568006682C0 /* JYHeadLineCell.m */,
+				5B852D0D1D430568006682C0 /* JYHeadLineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -581,8 +576,8 @@
 			files = (
 				5B84D59B1D3DD3270090FC35 /* ButtonData.plist in Resources */,
 				5B806D161D3C812E00C0EAA5 /* LaunchScreen.storyboard in Resources */,
-				5B19CDC01D422ADB00DECDF7 /* JYHeadToolBar.xib in Resources */,
 				5B806D131D3C812E00C0EAA5 /* Assets.xcassets in Resources */,
+				5B852D0F1D430568006682C0 /* JYHeadLineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,13 +661,12 @@
 				5B84D5A81D3E135C0090FC35 /* UIBarButtonItem+JYExtension.m in Sources */,
 				5B19CDAD1D42007000DECDF7 /* JYHeadLines.m in Sources */,
 				5B84D5A11D3DFBC80090FC35 /* JYVerticalButton.m in Sources */,
-				5B19CDBE1D422AC200DECDF7 /* JYHeadToolBar.m in Sources */,
 				5B806D761D3CB5D000C0EAA5 /* UIImage+CKExtension.m in Sources */,
 				5B806D771D3CB5D000C0EAA5 /* UIView+Extension.m in Sources */,
 				5B806D691D3C889F00C0EAA5 /* JYHomeHeadView.m in Sources */,
 				5B84D5A41D3E0F0C0090FC35 /* JYNavigationController.m in Sources */,
+				5B852D0E1D430568006682C0 /* JYHeadLineCell.m in Sources */,
 				5B806D6E1D3C896F00C0EAA5 /* JYRollingView.m in Sources */,
-				5B19CDB41D4203EC00DECDF7 /* JYHeadLineCell.m in Sources */,
 				5B806D5E1D3C816800C0EAA5 /* JYMineController.m in Sources */,
 				5B19CDB81D42060B00DECDF7 /* JYHeadLineFrame.m in Sources */,
 				5B84D59E1D3DD9160090FC35 /* JYBtnData.m in Sources */,
@@ -815,7 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LVDaDa/PrefixHeader.pch;
 				INFOPLIST_FILE = LVDaDa/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.LVDaDa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -829,7 +823,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LVDaDa/PrefixHeader.pch;
 				INFOPLIST_FILE = LVDaDa/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.LVDaDa;
 				PRODUCT_NAME = "$(TARGET_NAME)";

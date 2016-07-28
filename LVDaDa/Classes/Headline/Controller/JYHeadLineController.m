@@ -10,12 +10,13 @@
 #import "JYHeadLines.h"
 #import "JYHeadLineFrame.h"
 #import "JYHeadLineCell.h"
+#import "JYHeadLineCell.h"
 
 static NSString *url = @"http://apit.lvdd.cn/news/list?pageSize=15";
 
 @interface JYHeadLineController ()
 
-@property (strong, nonatomic) NSMutableArray *cellFrames;
+@property (strong, nonatomic) NSMutableArray *headLines;
 
 @end
 
@@ -25,20 +26,66 @@ static NSString *url = @"http://apit.lvdd.cn/news/list?pageSize=15";
 {
     [super viewDidLoad];
     
-    // 设置导航栏的头部视图和左边按钮
+    // 1.设置导航栏的头部视图和左边按钮
     [self setupNavigationInfo];
     
-    [self.tableView registerClass:[JYHeadLineCell class] forCellReuseIdentifier:@"headLine"];
-    
-    [self getHttpData];
+    // 2.设置tableView的参数
+    [self setupTableViewInfo];
 }
 
-- (NSMutableArray *)cellFrames
+- (void)setupTableViewInfo
 {
-    if (!_cellFrames) {
-        _cellFrames = [NSMutableArray array];
+    //    [self.tableView registerClass:[JYHeadLineCell class] forCellReuseIdentifier:@"headLine"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"JYHeadLineCell" bundle:nil] forCellReuseIdentifier:@"headLine"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // 1.自定义上拉刷新
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullRefreshToLoadTheLatestData)];
+    
+    // 设置文字
+    [header setTitle:@"律小二正在服务中" forState:MJRefreshStateRefreshing];
+    
+    self.tableView.mj_header = header;
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(dropRefreshToLoadMoreSata)];
+    self.tableView.mj_footer.hidden = YES;
+    
+    // 开始刷新
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (NSMutableArray *)headLines
+{
+    if (!_headLines) {
+        _headLines = [NSMutableArray array];
     }
-    return _cellFrames;
+    return _headLines;
+}
+
+- (void)pullRefreshToLoadTheLatestData
+{
+    [self.headLines removeAllObjects];
+    
+    [[AFHTTPSessionManager manager] POST:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *headLines = [JYHeadLines mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"contents"]];
+        [self.headLines addObjectsFromArray:headLines];
+        
+        [self.tableView reloadData];
+        
+        // 加载完数据后隐藏下拉刷新
+        [self.tableView.mj_header endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"网络错误"];
+    }];
+}
+
+- (void)dropRefreshToLoadMoreSata
+{
+    
 }
 
 #pragma mark ---> 设置导航栏的头部视图和左边按钮
@@ -53,33 +100,6 @@ static NSString *url = @"http://apit.lvdd.cn/news/list?pageSize=15";
 - (void)messageOnClick
 {
     
-}
-
-#pragma mark ---> 获取当前页的网络数据
-- (void)getHttpData
-{
-    [[AFHTTPSessionManager manager] POST:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-//        NSLog(@"%@", responseObject[@"data"]);
-        NSArray *headLines = [JYHeadLines mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"contents"]];
-//        NSLog(@"headLines = %@", headLines);
-        
-        // 获得最新的微博frame数组
-        NSArray *newFrames = [self headLineFramesWithHeadLines:headLines];
-//        NSLog(@"newFrames = %@", newFrames);
-        // 将新数据插入到旧数据的最前面
-        NSRange range = NSMakeRange(0, newFrames.count);
-        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.cellFrames insertObjects:newFrames atIndexes:indexSet];
-//        NSLog(@"cellFrames = %@", self.cellFrames);
-        
-        [self.tableView reloadData];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [SVProgressHUD showErrorWithStatus:@"网络错误"];
-    }];
 }
 
 /**
@@ -102,21 +122,22 @@ static NSString *url = @"http://apit.lvdd.cn/news/list?pageSize=15";
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.cellFrames.count;
+    return self.headLines.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     JYHeadLineCell *cell = [JYHeadLineCell cellWithTableView:tableView];
     
-    cell.headFrame = self.cellFrames[indexPath.row];
+    cell.headLines = self.headLines[indexPath.row];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JYHeadLineFrame *frame = self.cellFrames[indexPath.row];
+    JYHeadLines *frame = self.headLines[indexPath.row];
+//    NSLog(@"%f", frame.cellHeight);
     return frame.cellHeight;
 }
 

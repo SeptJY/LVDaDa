@@ -103,7 +103,7 @@ const static NSInteger space = 5;
     };
         
     CGFloat toolbarX = 0;
-    CGFloat toolbarY = iconH + magrinY;
+    CGFloat toolbarY = iconH + magrinY + CGRectGetMaxY(self.titleFrame);
     CGFloat toolbarW = screenW;
     CGFloat toolbarH = 35;
     self.toolbarFrame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);

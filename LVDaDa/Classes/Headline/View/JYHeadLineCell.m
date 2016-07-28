@@ -1,33 +1,30 @@
 //
-//  JYHeadLineCell.m
+//  JYHeadTestCell.m
 //  LVDaDa
 //
-//  Created by Sept on 16/7/22.
+//  Created by Sept on 16/7/23.
 //  Copyright © 2016年 丶九月. All rights reserved.
 //
 
 #import "JYHeadLineCell.h"
-#import "JYHeadLineFrame.h"
+
 #import "JYHeadLines.h"
 #import "JYHeadLinesImage.h"
-#import "JYHeadToolBar.h"
 
 @interface JYHeadLineCell ()
 
-@property (strong, nonatomic) UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
-// 当只有一张图片的时候
-@property (strong, nonatomic) UIImageView *viewImage;
+@property (weak, nonatomic) IBOutlet UIImageView *imgeView;
 
-// 有多张图片的时候
-@property (strong, nonatomic) UIImageView *oneImage;
-
-@property (strong, nonatomic) UIImageView *twoImage;
-
-@property (strong, nonatomic) UIImageView *threeImage;
-
-@property (strong, nonatomic) JYHeadToolBar *headTool;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imge1View;
+@property (weak, nonatomic) IBOutlet UIImageView *image2View;
+@property (weak, nonatomic) IBOutlet UIImageView *image3View;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sourceLable;
+@property (weak, nonatomic) IBOutlet UILabel *readLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shareLabel;
 @end
 
 @implementation JYHeadLineCell
@@ -44,146 +41,61 @@
     return cell;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
 }
 
-- (UILabel *)labelTitle
+- (void)setHeadLines:(JYHeadLines *)headLines
 {
-    if (!_labelTitle) {
-        
-        _labelTitle = [[UILabel alloc] init];
-        
-        _labelTitle.numberOfLines = 0;
-        _labelTitle.tintColor = [UIColor blackColor];
-        _labelTitle.font = setFont(15);
-        
-        [self.contentView addSubview:_labelTitle];
-    }
-    return _labelTitle;
-}
-
-- (UIImageView *)viewImage
-{
-    if (!_viewImage) {
-        
-        _viewImage = [[UIImageView alloc] init];
-        
-        _viewImage.image = [UIImage imageNamed:@"tou-tiao-di-tu(da)"];
-        
-        [self.contentView addSubview:_viewImage];
-    }
-    return _viewImage;
-}
-
-- (UIImageView *)oneImage
-{
-    if (!_oneImage) {
-        
-        _oneImage = [[UIImageView alloc] init];
-        
-        _oneImage.image = [UIImage imageNamed:@"ditu(xiao)"];
-        
-        [self.contentView addSubview:_oneImage];
-    }
-    return _oneImage;
-}
-
-- (UIImageView *)twoImage
-{
-    if (!_twoImage) {
-        
-        _twoImage = [[UIImageView alloc] init];
-        
-        _twoImage.image = [UIImage imageNamed:@"ditu(xiao)"];
-        
-        [self.contentView addSubview:_twoImage];
-    }
-    return _twoImage;
-}
-
-- (UIImageView *)threeImage
-{
-    if (!_threeImage) {
-        
-        _threeImage = [[UIImageView alloc] init];
-        
-        _threeImage.image = [UIImage imageNamed:@"ditu(xiao)"];
-        
-        [self.contentView addSubview:_threeImage];
-    }
-    return _threeImage;
-}
-
-- (JYHeadToolBar *)headTool
-{
-    if (!_headTool) {
-        
-        _headTool = [[JYHeadToolBar alloc] init];
-        
-        [self.contentView addSubview:_headTool];
-    }
-    return _headTool;
-}
-
-- (void)setHeadFrame:(JYHeadLineFrame *)headFrame
-{
-    _headFrame = headFrame;
+    _headLines = headLines;
     
-    self.labelTitle.frame = headFrame.titleFrame;
-    self.labelTitle.text = headFrame.headLines.newsTitle;
-    switch (headFrame.iconFrames.count) {
+    self.labelTitle.text = headLines.newsTitle;
+//    NSLog(@"%@, count = %lu", self.labelTitle.text, (unsigned long)headLines.newsImages.count);
+    
+    self.imgeView.hidden = YES;
+    self.imge1View.hidden = YES;
+    self.image2View.hidden = YES;
+    self.image3View.hidden = YES;
+    
+    switch (headLines.newsImages.count) {
         case 1:
         {
-            JYHeadLinesImage *headImages = headFrame.headLines.newsImages[0];
-            self.viewImage.frame = [headFrame.iconFrames[0] CGRectValue];
-            self.oneImage.hidden = YES;
-            self.twoImage.hidden = YES;
-            self.threeImage.hidden = YES;
-            [self.viewImage sd_setImageWithURL:[NSURL URLWithString:headImages.imageUrlView] placeholderImage:[UIImage imageNamed:@"tou-tiao-di-tu(da)"]];
+            self.imgeView.hidden = NO;
+            
+            JYHeadLinesImage *imgaes = headLines.newsImages[0];
+            [self.imgeView sd_setImageWithURL:[NSURL URLWithString:imgaes.imageUrlView] placeholderImage:[UIImage imageNamed:@"tou-tiao-di-tu(da)"]];
+            self.imge1View.hidden = YES;
+            self.image2View.hidden = YES;
+            self.image3View.hidden = YES;
         }
             break;
         case 2:
         {
-            // 1.去除图片的url
-            JYHeadLinesImage *headImages0 = headFrame.headLines.newsImages[0];
-            JYHeadLinesImage *headImages1 = headFrame.headLines.newsImages[1];
+            self.imge1View.hidden = NO;
+            self.image2View.hidden = NO;
             
-            // 2.设置图片的frame
-            self.oneImage.frame = [headFrame.iconFrames[0] CGRectValue];
-            self.twoImage.frame = [headFrame.iconFrames[1] CGRectValue];
-            
-            // 3.网络加载图片数据
-            [self.oneImage sd_setImageWithURL:[NSURL URLWithString:headImages0.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
-            [self.twoImage sd_setImageWithURL:[NSURL URLWithString:headImages1.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
-            
-            self.viewImage.hidden = YES;
-            self.threeImage.hidden = YES;
+            JYHeadLinesImage *imgaes1 = headLines.newsImages[0];
+            JYHeadLinesImage *imgaes2 = headLines.newsImages[1];
+            [self.imge1View sd_setImageWithURL:[NSURL URLWithString:imgaes1.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
+            [self.image2View sd_setImageWithURL:[NSURL URLWithString:imgaes2.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
+            self.imageView.hidden = YES;
+            self.image3View.hidden = YES;
         }
             break;
         case 3:
         {
-            // 1.去除图片的url
-            JYHeadLinesImage *headImages0 = headFrame.headLines.newsImages[0];
-            JYHeadLinesImage *headImages1 = headFrame.headLines.newsImages[1];
-            JYHeadLinesImage *headImages2 = headFrame.headLines.newsImages[2];
+            self.imge1View.hidden = NO;
+            self.image2View.hidden = NO;
+            self.image3View.hidden = NO;
             
-            // 2.设置图片的frame
-            self.oneImage.frame = [headFrame.iconFrames[0] CGRectValue];
-            self.twoImage.frame = [headFrame.iconFrames[1] CGRectValue];
-            self.threeImage.frame = [headFrame.iconFrames[2] CGRectValue];
-            
-            // 3.网络加载图片数据
-            [self.oneImage sd_setImageWithURL:[NSURL URLWithString:headImages0.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
-            [self.twoImage sd_setImageWithURL:[NSURL URLWithString:headImages1.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
-            [self.threeImage sd_setImageWithURL:[NSURL URLWithString:headImages2.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
-            
-            self.viewImage.hidden = YES;
+            JYHeadLinesImage *imgaes1 = headLines.newsImages[0];
+            JYHeadLinesImage *imgaes2 = headLines.newsImages[1];
+            JYHeadLinesImage *imgaes3 = headLines.newsImages[2];
+            [self.imge1View sd_setImageWithURL:[NSURL URLWithString:imgaes1.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
+            [self.image2View sd_setImageWithURL:[NSURL URLWithString:imgaes2.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
+            [self.image3View sd_setImageWithURL:[NSURL URLWithString:imgaes3.imageUrlView] placeholderImage:[UIImage imageNamed:@"ditu(xiao)"]];
+            self.imageView.hidden = YES;
         }
             break;
             
@@ -191,7 +103,21 @@
             break;
     }
     
-    self.headTool.frame = headFrame.toolbarFrame;
+    self.shareLabel.text = headLines.shareCount;
+    
+    self.contentLabel.text = headLines.commentCount;
+    
+    self.readLabel.text = headLines.browseCount;
+    
+    self.sourceLable.text = headLines.newsSource;
+    
+    self.timeLabel.text = headLines.createDateView;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
 }
 
 @end

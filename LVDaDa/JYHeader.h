@@ -19,5 +19,6 @@
 #import "SVProgressHUD.h"
 #import "UIImageView+WebCache.h"
 #import "JYNSString+Extension.h"
+#import "MJRefresh.h"
 
 #endif /* JYHeader_h */

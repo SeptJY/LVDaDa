@@ -9,6 +9,7 @@
 // 头条的图片数据
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface JYHeadLines : NSObject
 
@@ -35,5 +36,8 @@
 
 /** 资源来源途径 */
 @property (copy, nonatomic) NSString *newsSource;
+
+/** cell的高度 */
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 
 @end
